@@ -1,0 +1,24 @@
+a = 1234
+b = 4321
+c (copy of a) = 1234
+a == c? true
+a != b? true
+a < b? true
+a > b? false
+a <= c? true
+b >= a? true
+a + b = 5555
+a after a += b: 5555
+a == sum? true
+b << 3 = 4321000
+shiftLeft >> 2 = 43210
+b << shiftAmount (2) = 432100
+shiftBigLeft >> shiftAmount (2) = 4321
+inc before ++: 999
+inc++ = 999
+After inc++: 1000
+++inc = 1001
+x + y + z = 6000
+zero << 5 = 0
+zero >> 5 = 0
+large1 + large2 = 1000000000000000000000000

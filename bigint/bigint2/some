@@ -1,0 +1,21 @@
+a = 1337
+b = 828
+c (copy of a) = 1337
+d (leading zeros removed) = 123
+a + b = 2165
+a after a += b: 2165
+a == c? false
+b != d? true
+d < b? true
+a > c? true
+d <= d? true
+c >= a? false
+b << 2 = 82800
+shl >> 3 = 82
+b << shiftAmount (2) = 82800
+shl2 >> shiftAmount (2) = 828
+inc before ++: 999
+inc++ = 999
+After inc++: 1000
+++inc = 1001
+small >> 10 = 0
