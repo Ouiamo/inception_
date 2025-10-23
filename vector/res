@@ -1,0 +1,39 @@
+==== ADVANCED TEST 1: Mixed scalar + vector operations ====
+a = {1, -1}, b = {3, 4}
+a * 2 + b - 3 = {2, -1}
+3 + b * 2 - a = {8, 12}
+
+==== ADVANCED TEST 2: Compound assignment chaining ====
+(c += d) += e -> c = {6, 9} (should be {6,9})
+d = {2, 3}, e = {3, 4}
+
+==== ADVANCED TEST 3: Self compound operations ====
+s += s -> {4, 10} (should be {4,10})
+s *= 3 -> {12, 30} (should be {12,30})
+
+==== ADVANCED TEST 4: Increment / Decrement in expressions ====
+x = {0, 0}
+x++ = {0, 0} (should print old value {0,0})
+After x++ -> {1, 1} (should be {1,1})
+++x + 2 = {4, 4} (should be {4,4})
+x-- = {2, 2} (should print {2,2})
+After x-- -> {1, 1} (should be {1,1})
+--x = {0, 0} (should be {0,0})
+
+==== ADVANCED TEST 5: Equality & Inequality ====
+p1 == p2 : 1
+p1 != p2 : 0
+p1 == p3 : 0
+p1 != p3 : 1
+
+==== ADVANCED TEST 6: Nested expressions ====
+(n1 + n2) * 2 + n3 * (n1 + 1) = {14, 18}
+Expected: (n1+n2)={3,4} *2={6,8}; n3*(n1+1)={4*2,5*2}={8,10}; total={14,18}
+
+==== ADVANCED TEST 7: Negative & zero mix ====
+neg = {-2, 5}, zero = {0, 0}
+neg - 2 = {-4, 3}
+2 - neg = {4, -3}
+neg * zero = {0, 0}
+zero * 3 = {0, 0}
+neg + zero = {-2, 5}

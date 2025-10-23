@@ -1,0 +1,57 @@
+==== TEST 1: Constructors ====
+a = {0, 0}
+b = {4, -2}
+c = {4, -2}
+
+==== TEST 2: Access and Assignment ====
+a after assignment = {10, 20}
+a[0] = 10, a[1] = 20
+
+==== TEST 3: Scalar Operations ====
+a * 2 = {20, 40}
+2 * a = {20, 40}
+a + 3 = {13, 23}
+3 + a = {13, 23}
+a - 5 = {5, 15}
+5 - a = {-5, -15}
+
+==== TEST 4: Vector Operations ====
+x = {1, 2}, y = {3, 4}
+x + y = {4, 6}
+y - x = {2, 2}
+x * y = {3, 8}  (component-wise)
+
+==== TEST 5: Compound Assignments ====
+Initial: d = {2, 2}, e = {5, 5}
+After d += e: d = {7, 7}
+After d -= (1,1): d = {6, 6}
+After d *= 2: d = {12, 12}
+
+==== TEST 6: Mixed and Chained Expressions ====
+result = 2 + p * q + r - 1 = {6, 11}
+Expected calculation: (p*q)={2,6}, +r={5,10}, +2={7,12}, -1={6,11}
+
+==== TEST 7: Increment and Decrement ====
+inc = {0, 0}
+inc++ = {0, 0}
+After inc++: {1, 1}
+++inc = {2, 2}
+inc-- = {2, 2}
+After inc--: {1, 1}
+--inc = {0, 0}
+
+==== TEST 8: Comparisons ====
+g1 == g2 : 1
+g1 != g2 : 0
+g1 == g3 : 0
+g1 != g3 : 1
+
+==== TEST 9: Chained Compound Ops ====
+(z1 += z2) += z3 → z1 = {6, 6}
+z2 = {2, 2}, z3 = {3, 3}
+
+==== TEST 10: Negative and Zero ====
+neg = {-3, -4}, zero = {0, 0}
+neg + 3 = {0, -1}
+zero - 1 = {-1, -1}
+neg * zero = {0, 0}

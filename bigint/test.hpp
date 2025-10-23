@@ -58,18 +58,71 @@
 
 
 
+// #ifndef BIGINT_HPP
+// #define BIGINT_HPP
+
+// #include <iostream>
+// #include <string>
+// #include <sstream>
+// #include <ostream>
+
+// class bigint
+// {
+//     private:
+//         std::string digits;
+//         void remove();
+//     public:
+//         bigint();
+//         bigint(unsigned int number);
+//         bigint(const std::string& number);
+//         bigint(const bigint& other);
+//         bigint &operator=(const bigint& other);
+//         ~bigint();
+//         //=======================================comparaison
+//         bool operator==(const bigint& other) const;
+//         bool operator!=(const bigint& other) const;
+//         bool operator>(const bigint& other) const;
+//         bool operator<(const bigint& other) const;
+//         bool operator>=(const bigint& other) const;
+//         bool operator<=(const bigint& other) const;
+//         //=========================================add
+//         bigint operator+(const bigint& other) const;
+//         bigint &operator+=(const bigint& other);
+//         //=========================================shifting_10
+//         bigint operator<<(unsigned int n) const;
+//         bigint operator>>(unsigned int n) const;
+//         bigint &operator<<=(unsigned int n);
+//         bigint &operator>>=(unsigned int n);
+//         //=========================================shifting_bigint
+//         bigint operator<<(const bigint& other) const;
+//         bigint operator>>(const bigint& other) const;
+//         bigint &operator<<=(const bigint& other);
+//         bigint &operator>>=(const bigint& other);
+//         //=========================================increment
+//         bigint operator++(int);
+//         bigint &operator++();
+//         //=========================================geter
+//         const std::string get_digits() const;
+
+// };
+
+// std::ostream &operator<<(std::ostream& out, const bigint& n);
+
+// #endif
+
+
 #ifndef BIGINT_HPP
 #define BIGINT_HPP
 
 #include <iostream>
-#include <string>
 #include <sstream>
 #include <ostream>
+#include <string>
 
 class bigint
 {
     private:
-        std::string digits;
+        std::string digit;
         void remove();
     public:
         bigint();
@@ -78,34 +131,33 @@ class bigint
         bigint(const bigint& other);
         bigint &operator=(const bigint& other);
         ~bigint();
-        //=======================================comparaison
+        //========================================add
+        bigint operator+(const bigint& other) const;
+        bigint &operator+=(const bigint& other);
+        //========================================comparison
         bool operator==(const bigint& other) const;
         bool operator!=(const bigint& other) const;
         bool operator>(const bigint& other) const;
         bool operator<(const bigint& other) const;
         bool operator>=(const bigint& other) const;
         bool operator<=(const bigint& other) const;
-        //=========================================add
-        bigint operator+(const bigint& other) const;
-        bigint &operator+=(const bigint& other);
-        //=========================================shifting_10
+        //==========================================shefting_10
         bigint operator<<(unsigned int n) const;
         bigint operator>>(unsigned int n) const;
         bigint &operator<<=(unsigned int n);
         bigint &operator>>=(unsigned int n);
-        //=========================================shifting_bigint
+        //==========================================shefting_bigint
         bigint operator<<(const bigint& other) const;
         bigint operator>>(const bigint& other) const;
         bigint &operator<<=(const bigint& other);
         bigint &operator>>=(const bigint& other);
-        //=========================================increment
-        bigint operator++(int);
+        //==========================================increment
         bigint &operator++();
-        //=========================================geter
-        const std::string get_digits() const;
-
+        bigint operator++(int);
+        //==========================================geter
+        const std::string get_degit() const;
 };
 
-std::ostream &operator<<(std::ostream& out, const bigint& n);
+std::ostream &operator<<(std::ostream &out, const bigint& n);
 
 #endif
